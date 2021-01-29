@@ -1,0 +1,80 @@
+<!-- <form #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input required
+    minlength="3" maxlength="10" pattern="banana"
+    ngModel
+    name="firstName"
+    #firstName="ngModel"
+    (change)="log(firstName)"
+    id="firstName"
+    type="text"
+    class="form-control">
+    <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+      <div *ngIf="firstName.errors.required">First name required</div>
+      <div *ngIf="firstName.errors.minlength">min {{firstName.errors.minlength.requiredLength}}</div>
+      <div *ngIf="firstName.errors.maxlength">max</div>
+      <div *ngIf="firstName.errors.pattern">pattern</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <textarea ngModel name="comment" id="comment" type="textarea" class="form-control"></textarea>
+  </div>
+  <div class='checkbox'>
+    <label>
+      <input type='checkbox' ngModel name="isSubscribed"> Subscribe
+    </label>
+  </div>
+  <div class='form-group'>
+    <label for="contactMethod">Contact Method</label>
+    <select ngModel name="contactMethod" id="contactMethod">
+      <option value=""></option>
+      <option *ngFor="let method of contactMethods" [value]="method.id">{{method.name}}</option>
+    </select>
+  </div>
+
+  <p>
+    {{f.value|json}}
+  </p>
+  <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form> -->
+
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div class="form-group">
+  <label for="courseName">Course Name</label>
+  <input required
+  minlength="3" maxlength="10"
+  ngModel
+  name="courseName"
+  #courseName="ngModel"
+  (change)="log(courseName)"
+  id="courseName"
+  type="text"
+  class="form-control">
+  <div class="alert alert-danger" *ngIf="courseName.touched && !courseName.valid">
+    <div *ngIf="courseName.errors.required">First name required</div>
+
+  </div>
+</div>
+
+
+<div class='form-group'>
+  <label for="categories">Contact Method</label>
+  <select ngModel name="categories" id="categories">
+    <option value=""></option>
+    <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+  </select>
+</div>
+
+<div class='checkbox'>
+  <label>
+    <input type='checkbox' ngModel name="hasGuarantree"> 30 Day Guarantree
+  </label>
+</div>
+
+<p>
+  {{f.value|json}}
+</p>
+<button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>
